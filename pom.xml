@@ -33,6 +33,7 @@
         <module>osgiservice.users</module>
         <module>osgiservice.tests</module>
         <module>jacoco-coverage-report</module>
+        <module>osgiservice-bom</module>
     </modules>
 
     <properties>
