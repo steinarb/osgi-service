@@ -21,7 +21,7 @@
     </parent>
     <groupId>no.priv.bang.osgiservice</groupId>
     <artifactId>osgiservice-parent</artifactId>
-    <version>1.8.0-SNAPSHOT</version>
+    <version>1.8.0</version>
 
     <packaging>pom</packaging>
 
@@ -158,7 +158,7 @@
     <scm>
         <url>https://github.com/steinarb/osgi-service</url>
         <connection>scm:git:https://github.com/steinarb/osgi-service.git</connection>
-        <tag>HEAD</tag>
+        <tag>osgiservice-1.8.0</tag>
     </scm>
 
     <issueManagement>

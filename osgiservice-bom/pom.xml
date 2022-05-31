@@ -17,7 +17,7 @@
     <parent>
         <groupId>no.priv.bang.osgiservice</groupId>
         <artifactId>osgiservice-parent</artifactId>
-        <version>1.8.0-SNAPSHOT</version>
+        <version>1.8.0</version>
     </parent>
     <artifactId>osgiservice-bom</artifactId>
 
@@ -29,24 +29,24 @@
             <dependency>
                 <groupId>no.priv.bang.osgiservice</groupId>
                 <artifactId>osgiservice.database</artifactId>
-                <version>1.8.0-SNAPSHOT</version>
+                <version>1.8.0</version>
             </dependency>
             <dependency>
                 <groupId>no.priv.bang.osgiservice</groupId>
                 <artifactId>osgiservice.database</artifactId>
-                <version>1.8.0-SNAPSHOT</version>
+                <version>1.8.0</version>
                 <type>xml</type>
                 <classifier>features</classifier>
             </dependency>
             <dependency>
                 <groupId>no.priv.bang.osgiservice</groupId>
                 <artifactId>osgiservice.users</artifactId>
-                <version>1.8.0-SNAPSHOT</version>
+                <version>1.8.0</version>
             </dependency>
             <dependency>
                 <groupId>no.priv.bang.osgiservice</groupId>
                 <artifactId>osgiservice.users</artifactId>
-                <version>1.8.0-SNAPSHOT</version>
+                <version>1.8.0</version>
                 <type>xml</type>
                 <classifier>features</classifier>
             </dependency>
