@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Steinar Bang
+ * Copyright 2022 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
  */
 package no.priv.bang.osgiservice.users;
 
-public class AuthservicePasswordsNotIdenticalException extends AuthserviceException {
-	private static final long serialVersionUID = -1661071184380067526L;
+public class UsersPasswordsNotIdenticalException extends UsersException {
+    private static final long serialVersionUID = -1661071184380067526L;
 
-	public AuthservicePasswordsNotIdenticalException(String message) {
-		super(message);
-	}
+    public UsersPasswordsNotIdenticalException(String message) {
+        super(message);
+    }
 }

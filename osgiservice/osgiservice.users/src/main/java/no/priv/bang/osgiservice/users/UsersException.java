@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Steinar Bang
+ * Copyright 2022 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,14 @@
  */
 package no.priv.bang.osgiservice.users;
 
-public class AuthserviceException extends RuntimeException {
+public class UsersException extends RuntimeException {
     private static final long serialVersionUID = -4294769409773785493L;
 
-    public AuthserviceException(String message, Throwable e) {
+    public UsersException(String message, Throwable e) {
         super(message, e);
     }
 
-    public AuthserviceException(String message) {
+    public UsersException(String message) {
         super(message);
     }
 

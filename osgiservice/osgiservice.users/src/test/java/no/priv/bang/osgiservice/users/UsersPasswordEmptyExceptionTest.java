@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Steinar Bang
+ * Copyright 2022 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class AuthservicePasswordEmptyExceptionTest {
+class UsersPasswordEmptyExceptionTest {
 
     @Test
     void testCreate() {
         String message = "The passwords don't match";
-        AuthservicePasswordEmptyException exception = new AuthservicePasswordEmptyException(message);
+        var exception = new UsersPasswordEmptyException(message);
         assertEquals(message, exception.getMessage());
     }
 

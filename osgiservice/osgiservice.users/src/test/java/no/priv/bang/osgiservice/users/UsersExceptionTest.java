@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Steinar Bang
+ * Copyright 2022 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,13 +19,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class AuthserviceExceptionTest {
+class UsersExceptionTest {
 
     @Test
     void testCreateWithException() {
         String message = "Caught exception";
         NullPointerException inner = new NullPointerException();
-        AuthserviceException exception = new AuthserviceException(message, inner);
+        var exception = new UsersException(message, inner);
         assertEquals(message, exception.getMessage());
         assertEquals(inner, exception.getCause());
     }
@@ -33,7 +33,7 @@ class AuthserviceExceptionTest {
     @Test
     void testCreateWithMessage() {
         String message = "Caught exception";
-        AuthserviceException exception = new AuthserviceException(message);
+        var exception = new UsersException(message);
         assertEquals(message, exception.getMessage());
     }
 

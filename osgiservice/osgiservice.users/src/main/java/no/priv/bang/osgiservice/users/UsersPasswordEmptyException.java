@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Steinar Bang
+ * Copyright 2022 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,11 @@
  */
 package no.priv.bang.osgiservice.users;
 
-public class AuthservicePasswordEmptyException extends AuthserviceException {
-	private static final long serialVersionUID = 6107011268513634991L;
+public class UsersPasswordEmptyException extends UsersException {
+    private static final long serialVersionUID = 6107011268513634991L;
 
-	public AuthservicePasswordEmptyException(String message) {
-		super(message);
-	}
+    public UsersPasswordEmptyException(String message) {
+        super(message);
+    }
 
 }
