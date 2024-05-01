@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ public abstract class DatabaseServiceBase implements DatabaseService {
      * @return a {@code Properties} instance holding connection information for a JDBC connection. At a minimum it will contain a {@code DataSourceFactory#JDBC_URL} value, and it may also contain {@code DataSourceFactory#JDBC_USER} and {@code DataSourceFactory#JDBC_PASSWORD} values
      */
     public static Properties createDatabaseConnectionProperties(String jdbcUrl, String jdbcUser, String jdbcPassword) {
-        Properties properties = new Properties();
+        var properties = new Properties();
         properties.setProperty(DataSourceFactory.JDBC_URL, jdbcUrl);
         if (!"".equals(jdbcUser)) {
             properties.setProperty(DataSourceFactory.JDBC_USER, jdbcUser);

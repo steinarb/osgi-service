@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2021 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ public class User extends Immutable { // NOSONAR Immutable handles added fields
     }
 
     public static UserBuilder with(User user) {
-        UserBuilder builder = new UserBuilder();
+        var builder = new UserBuilder();
         builder.userid = user.userid;
         builder.username = user.username;
         builder.email = user.email;
@@ -74,7 +74,7 @@ public class User extends Immutable { // NOSONAR Immutable handles added fields
         private UserBuilder() {}
 
         public User build() {
-            User user = new User();
+            var user = new User();
             user.userid = this.userid;
             user.username = this.username;
             user.email = this.email;

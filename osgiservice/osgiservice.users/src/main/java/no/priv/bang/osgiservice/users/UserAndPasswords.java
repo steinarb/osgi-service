@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2021 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ public class UserAndPasswords {
         private UserAndPasswordsBuilder() {}
 
         public UserAndPasswords build() {
-            UserAndPasswords userAndPasswords = new UserAndPasswords();
+            var userAndPasswords = new UserAndPasswords();
             userAndPasswords.user = this.user;
             userAndPasswords.password1 = this.password1;
             userAndPasswords.password2 = this.password2;

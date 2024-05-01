@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2021 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ public class Role extends Immutable { // NOSONAR Immutable handles added fields
     }
 
     public static RoleBuilder with(Role role) {
-        RoleBuilder builder = new RoleBuilder();
+        var builder = new RoleBuilder();
         builder.id = role.id;
         builder.rolename = role.rolename;
         builder.description = role.description;
@@ -60,7 +60,7 @@ public class Role extends Immutable { // NOSONAR Immutable handles added fields
         private RoleBuilder() {}
 
         public Role build() {
-            Role role = new Role();
+            var role = new Role();
             role.id = this.id;
             role.rolename = this.rolename;
             role.description = this.description;
