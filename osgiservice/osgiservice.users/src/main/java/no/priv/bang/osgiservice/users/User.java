@@ -50,12 +50,12 @@ public class User extends Immutable { // NOSONAR Immutable handles added fields
         return lastname;
     }
 
-    public static UserBuilder with() {
-        return new UserBuilder();
+    public static Builder with() {
+        return new Builder();
     }
 
-    public static UserBuilder with(User user) {
-        var builder = new UserBuilder();
+    public static Builder with(User user) {
+        var builder = new Builder();
         builder.userid = user.userid;
         builder.username = user.username;
         builder.email = user.email;
@@ -64,14 +64,14 @@ public class User extends Immutable { // NOSONAR Immutable handles added fields
         return builder;
     }
 
-    public static class UserBuilder {
+    public static class Builder {
         private int userid = -1;
         private String username;
         private String email;
         private String firstname;
         private String lastname;
 
-        private UserBuilder() {}
+        private Builder() {}
 
         public User build() {
             var user = new User();
@@ -83,27 +83,27 @@ public class User extends Immutable { // NOSONAR Immutable handles added fields
             return user;
         }
 
-        public UserBuilder userid(int userid) {
+        public Builder userid(int userid) {
             this.userid = userid;
             return this;
         }
 
-        public UserBuilder username(String username) {
+        public Builder username(String username) {
             this.username = username;
             return this;
         }
 
-        public UserBuilder email(String email) {
+        public Builder email(String email) {
             this.email = email;
             return this;
         }
 
-        public UserBuilder firstname(String firstname) {
+        public Builder firstname(String firstname) {
             this.firstname = firstname;
             return this;
         }
 
-        public UserBuilder lastname(String lastname) {
+        public Builder lastname(String lastname) {
             this.lastname = lastname;
             return this;
         }

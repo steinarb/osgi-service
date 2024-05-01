@@ -37,15 +37,15 @@ public class RolePermissions {
         return permissions;
     }
 
-    public static RolePermissionsBuilder with() {
-        return new RolePermissionsBuilder();
+    public static Builder with() {
+        return new Builder();
     }
 
-    public static class RolePermissionsBuilder {
+    public static class Builder {
         private Role role;
         private List<Permission> permissions;
 
-        private RolePermissionsBuilder() {}
+        private Builder() {}
 
         public RolePermissions build() {
             var rolePermissions = new RolePermissions();
@@ -54,12 +54,12 @@ public class RolePermissions {
             return rolePermissions;
         }
 
-        public RolePermissionsBuilder role(Role role) {
+        public Builder role(Role role) {
             this.role = role;
             return this;
         }
 
-        public RolePermissionsBuilder permissions(List<Permission> permissions) {
+        public Builder permissions(List<Permission> permissions) {
             this.permissions = permissions;
             return this;
         }

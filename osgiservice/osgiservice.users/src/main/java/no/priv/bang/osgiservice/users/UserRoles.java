@@ -32,15 +32,15 @@ public class UserRoles {
         return roles;
     }
 
-    public static UserRolesBuilder with() {
-        return new UserRolesBuilder();
+    public static Builder with() {
+        return new Builder();
     }
 
-    public static class UserRolesBuilder {
+    public static class Builder {
         private User user;
         private List<Role> roles;
 
-        private UserRolesBuilder() {}
+        private Builder() {}
 
         public UserRoles build() {
             var userRoles = new UserRoles();
@@ -49,12 +49,12 @@ public class UserRoles {
             return userRoles;
         }
 
-        public UserRolesBuilder user(User user) {
+        public Builder user(User user) {
             this.user = user;
             return this;
         }
 
-        public UserRolesBuilder roles(List<Role> roles) {
+        public Builder roles(List<Role> roles) {
             this.roles = roles;
             return this;
         }

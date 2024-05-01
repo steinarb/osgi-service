@@ -45,17 +45,17 @@ public class UserAndPasswords {
         return passwordsNotIdentical;
     }
 
-    public static UserAndPasswordsBuilder with() {
-        return new UserAndPasswordsBuilder();
+    public static Builder with() {
+        return new Builder();
     }
 
-    public static class UserAndPasswordsBuilder {
+    public static class Builder {
         private User user;
         private String password1;
         private String password2;
         private boolean passwordsNotIdentical;
 
-        private UserAndPasswordsBuilder() {}
+        private Builder() {}
 
         public UserAndPasswords build() {
             var userAndPasswords = new UserAndPasswords();
@@ -66,22 +66,22 @@ public class UserAndPasswords {
             return userAndPasswords;
         }
 
-        public UserAndPasswordsBuilder user(User user) {
+        public Builder user(User user) {
             this.user = user;
             return this;
         }
 
-        public UserAndPasswordsBuilder password1(String password1) {
+        public Builder password1(String password1) {
             this.password1 = password1;
             return this;
         }
 
-        public UserAndPasswordsBuilder password2(String password2) {
+        public Builder password2(String password2) {
             this.password2 = password2;
             return this;
         }
 
-        public UserAndPasswordsBuilder passwordsNotIdentical(boolean passwordsNotIdentical) {
+        public Builder passwordsNotIdentical(boolean passwordsNotIdentical) {
             this.passwordsNotIdentical = passwordsNotIdentical;
             return this;
         }

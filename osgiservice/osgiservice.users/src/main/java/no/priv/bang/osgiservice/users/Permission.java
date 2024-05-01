@@ -39,24 +39,24 @@ public class Permission {
         return description;
     }
 
-    public static PermissionBuilder with() {
-        return new PermissionBuilder();
+    public static Builder with() {
+        return new Builder();
     }
 
-    public static PermissionBuilder with(Permission permission) {
-        var builder = new PermissionBuilder();
+    public static Builder with(Permission permission) {
+        var builder = new Builder();
         builder.id = permission.id;
         builder.permissionname = permission.permissionname;
         builder.description = permission.description;
         return builder;
     }
 
-    public static class PermissionBuilder {
+    public static class Builder {
         private int id = -1;
         private String permissionname;
         private String description;
 
-        private PermissionBuilder() {}
+        private Builder() {}
 
         public Permission build() {
             var permission = new Permission();
@@ -66,17 +66,17 @@ public class Permission {
             return permission;
         }
 
-        public PermissionBuilder id(int id) {
+        public Builder id(int id) {
             this.id = id;
             return this;
         }
 
-        public PermissionBuilder permissionname(String permissionname) {
+        public Builder permissionname(String permissionname) {
             this.permissionname = permissionname;
             return this;
         }
 
-        public PermissionBuilder description(String description) {
+        public Builder description(String description) {
             this.description = description;
             return this;
         }

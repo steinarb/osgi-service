@@ -40,24 +40,24 @@ public class Role extends Immutable { // NOSONAR Immutable handles added fields
         return description;
     }
 
-    public static RoleBuilder with() {
-        return new RoleBuilder();
+    public static Builder with() {
+        return new Builder();
     }
 
-    public static RoleBuilder with(Role role) {
-        var builder = new RoleBuilder();
+    public static Builder with(Role role) {
+        var builder = new Builder();
         builder.id = role.id;
         builder.rolename = role.rolename;
         builder.description = role.description;
         return builder;
     }
 
-    public static class RoleBuilder {
+    public static class Builder {
         private int id = -1;
         private String rolename;
         private String description;
 
-        private RoleBuilder() {}
+        private Builder() {}
 
         public Role build() {
             var role = new Role();
@@ -67,17 +67,17 @@ public class Role extends Immutable { // NOSONAR Immutable handles added fields
             return role;
         }
 
-        public RoleBuilder id(int id) {
+        public Builder id(int id) {
             this.id = id;
             return this;
         }
 
-        public RoleBuilder rolename(String rolename) {
+        public Builder rolename(String rolename) {
             this.rolename = rolename;
             return this;
         }
 
-        public RoleBuilder description(String description) {
+        public Builder description(String description) {
             this.description = description;
             return this;
         }
