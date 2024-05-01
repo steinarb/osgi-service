@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2021 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class UserManagementServiceTest {
 
     @Test
     void testServiceDefinition() throws Exception {
-        UserManagementService service = mock(UserManagementService.class);
+        var service = mock(UserManagementService.class);
         when(service.getUsers()).thenReturn(Arrays.asList(User.with().userid(42).username("jdoe").email("jdoe42@gmail.com").firstname("John").lastname("Doe").build()));
         List<User> users = service.getUsers();
         User user = users.get(0);
@@ -38,7 +38,7 @@ class UserManagementServiceTest {
         List<User> usersAfterPasswordUpdate = service.updatePassword(userPasswords);
         assertEquals(0, usersAfterPasswordUpdate.size());
         User newUser = User.with().userid(-1).username("nuser").email("nuser@gmail.com").firstname("New").lastname("User").build();
-        UserAndPasswords newUserWithPasswords = UserAndPasswords.with()
+        var newUserWithPasswords = UserAndPasswords.with()
             .user(newUser)
             .password1("secret")
             .password2("secret")
@@ -47,7 +47,7 @@ class UserManagementServiceTest {
         List<User> usersAfterUserCreate = service.addUser(newUserWithPasswords);
         assertEquals(0, usersAfterUserCreate.size());
 
-        String username = "jad";
+        var username = "jad";
         User otherUser = service.getUser(username);
         assertNull(otherUser);
         List<Role> rolesForOtherUser = service.getRolesForUser(username);
@@ -57,10 +57,10 @@ class UserManagementServiceTest {
 
         List<Role> roles = service.getRoles();
         assertEquals(0, roles.size());
-        Role role = Role.with().build();
+        var role = Role.with().build();
         List<Role> rolesAfterModification = service.modifyRole(role);
         assertEquals(0, rolesAfterModification.size());
-        Role newRole = Role.with().build();
+        var newRole = Role.with().build();
         List<Role> rolesAfterAddition = service.addRole(newRole);
         assertEquals(0, rolesAfterAddition.size());
 
@@ -83,7 +83,7 @@ class UserManagementServiceTest {
 
         Map<String, List<Permission>> rolesPermissions = service.getRolesPermissions();
         assertEquals(0, rolesPermissions.size());
-        RolePermissions rolepermissions = RolePermissions.with().role(role).permissions(permissions).build();
+        var rolepermissions = RolePermissions.with().role(role).permissions(permissions).build();
         Map<String, List<Permission>> rolesPermissionsAfterAdd = service.addRolePermissions(rolepermissions);
         assertEquals(0, rolesPermissionsAfterAdd.size());
         Map<String, List<Permission>> rolesPermissionsAfterRemove = service.removeRolePermissions(rolepermissions);

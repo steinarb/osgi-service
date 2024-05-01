@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Steinar Bang
+ * Copyright 2022-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ class UsersExceptionTest {
 
     @Test
     void testCreateWithException() {
-        String message = "Caught exception";
-        NullPointerException inner = new NullPointerException();
+        var message = "Caught exception";
+        var inner = new NullPointerException();
         var exception = new UsersException(message, inner);
         assertEquals(message, exception.getMessage());
         assertEquals(inner, exception.getCause());
@@ -32,7 +32,7 @@ class UsersExceptionTest {
 
     @Test
     void testCreateWithMessage() {
-        String message = "Caught exception";
+        var message = "Caught exception";
         var exception = new UsersException(message);
         assertEquals(message, exception.getMessage());
     }

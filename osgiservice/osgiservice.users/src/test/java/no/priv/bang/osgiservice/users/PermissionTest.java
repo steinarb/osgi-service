@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2021 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,10 @@ class PermissionTest {
 
     @Test
     void testCreate() {
-        int id = 365;
-        String permissionname = "user_admin_write";
-        String description = "Allow updating user data";
-        Permission bean = Permission.with()
+        var id = 365;
+        var permissionname = "user_admin_write";
+        var description = "Allow updating user data";
+        var bean = Permission.with()
             .id(id)
             .permissionname(permissionname)
             .description(description)
@@ -38,15 +38,15 @@ class PermissionTest {
 
     @Test
     void testCopy() {
-        int id = 365;
-        String permissionname = "user_admin_write";
-        String description = "Allow updating user data";
-        Permission bean = Permission.with()
+        var id = 365;
+        var permissionname = "user_admin_write";
+        var description = "Allow updating user data";
+        var bean = Permission.with()
             .id(id)
             .permissionname(permissionname)
             .description(description)
             .build();
-        Permission copy = Permission.with(bean).build();
+        var copy = Permission.with(bean).build();
         assertEquals(id, copy.getId());
         assertEquals(permissionname, copy.getPermissionname());
         assertEquals(description, copy.getDescription());
@@ -54,8 +54,8 @@ class PermissionTest {
 
     @Test
     void testNoArgsConstructor() {
-        int id = -1;
-        Permission bean = Permission.with().build();
+        var id = -1;
+        var bean = Permission.with().build();
         assertEquals(id, bean.getId());
         assertNull(bean.getPermissionname());
         assertNull(bean.getDescription());

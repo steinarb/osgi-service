@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Steinar Bang
+ * Copyright 2022-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class UsersPasswordsNotIdenticalExceptionTest {
 
     @Test
     void testCreate() {
-        String message = "The passwords don't match";
+        var message = "The passwords don't match";
         var exception = new UsersPasswordsNotIdenticalException(message);
         assertEquals(message, exception.getMessage());
     }

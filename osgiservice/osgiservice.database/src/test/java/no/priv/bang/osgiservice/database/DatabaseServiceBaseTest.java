@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import java.sql.Connection;
-import java.util.Properties;
-
 import javax.sql.DataSource;
 
 import org.junit.jupiter.api.Test;
@@ -30,10 +28,10 @@ class DatabaseServiceBaseTest {
 
     @Test
     void testGetConnection() throws Exception {
-        Connection connection = mock(Connection.class);
-        DataSource datasource = mock(DataSource.class);
+        var connection = mock(Connection.class);
+        var datasource = mock(DataSource.class);
         when(datasource.getConnection()).thenReturn(connection);
-        DatabaseService service = new DatabaseServiceBase() {
+        var service = new DatabaseServiceBase() {
 
                 @Override
                 public DataSource getDatasource() {
@@ -45,7 +43,7 @@ class DatabaseServiceBaseTest {
 
     @Test
     void testGetConnectionWithNoDataSource() throws Exception {
-        DatabaseService service = new DatabaseServiceBase() {
+        var service = new DatabaseServiceBase() {
 
                 @Override
                 public DataSource getDatasource() {
@@ -60,11 +58,11 @@ class DatabaseServiceBaseTest {
 
     @Test
     void testCreateDatabaseConnectionProperties() {
-        Properties connectionProperties1 = DatabaseServiceBase.createDatabaseConnectionProperties("jdbc:postgresql:///ukelonn", "karaf", "karaf");
+        var connectionProperties1 = DatabaseServiceBase.createDatabaseConnectionProperties("jdbc:postgresql:///ukelonn", "karaf", "karaf");
         assertEquals("jdbc:postgresql:///ukelonn", connectionProperties1.get(DataSourceFactory.JDBC_URL));
         assertEquals("karaf", connectionProperties1.get(DataSourceFactory.JDBC_USER));
         assertEquals("karaf", connectionProperties1.get(DataSourceFactory.JDBC_PASSWORD));
-        Properties connectionProperties2 = DatabaseServiceBase.createDatabaseConnectionProperties("jdbc:postgresql:///ukelonn", "", "");
+        var connectionProperties2 = DatabaseServiceBase.createDatabaseConnectionProperties("jdbc:postgresql:///ukelonn", "", "");
         assertEquals("jdbc:postgresql:///ukelonn", connectionProperties2.get(DataSourceFactory.JDBC_URL));
         assertNull(connectionProperties2.get(DataSourceFactory.JDBC_USER));
         assertNull(connectionProperties2.get(DataSourceFactory.JDBC_PASSWORD));

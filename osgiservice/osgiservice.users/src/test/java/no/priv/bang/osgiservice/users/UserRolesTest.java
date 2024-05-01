@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2021 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,32 +18,30 @@ package no.priv.bang.osgiservice.users;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
 
 class UserRolesTest {
 
     @Test
     void testCreate() {
-        int userid = 42;
-        String username = "jdoe";
-        String email = "jdoe31@gmail.com";
-        String firstname = "John";
-        String lastname = "Doe";
-        User user = User.with()
+        var userid = 42;
+        var username = "jdoe";
+        var email = "jdoe31@gmail.com";
+        var firstname = "John";
+        var lastname = "Doe";
+        var user = User.with()
             .userid(userid)
             .username(username)
             .email(email)
             .firstname(firstname)
             .lastname(lastname)
             .build();
-        int id = 42;
-        String rolename = "admin";
-        String description = "This is an administrator";
-        Role role = Role.with().id(id).rolename(rolename).description(description).build();
-        List<Role> roles = Arrays.asList(role);
-        UserRoles userroles = UserRoles.with().user(user).roles(roles).build();
+        var id = 42;
+        var rolename = "admin";
+        var description = "This is an administrator";
+        var role = Role.with().id(id).rolename(rolename).description(description).build();
+        var roles = Arrays.asList(role);
+        var userroles = UserRoles.with().user(user).roles(roles).build();
 
         assertEquals(user, userroles.getUser());
         assertEquals(role, userroles.getRoles().get(0));
@@ -51,7 +49,7 @@ class UserRolesTest {
 
     @Test
     void testNoargsConstructor() {
-        UserRoles userroles = UserRoles.with().build();
+        var userroles = UserRoles.with().build();
 
         assertNull(userroles.getUser());
         assertNull(userroles.getRoles());

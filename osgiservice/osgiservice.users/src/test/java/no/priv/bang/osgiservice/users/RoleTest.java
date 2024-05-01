@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2021 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,10 @@ class RoleTest {
 
     @Test
     void testCreate() {
-        int id = 42;
-        String rolename = "admin";
-        String description = "This is an administrator";
-        Role bean = Role.with().id(id).rolename(rolename).description(description).build();
+        var id = 42;
+        var rolename = "admin";
+        var description = "This is an administrator";
+        var bean = Role.with().id(id).rolename(rolename).description(description).build();
         assertEquals(id, bean.getId());
         assertEquals(rolename, bean.getRolename());
         assertEquals(description, bean.getDescription());
@@ -34,11 +34,11 @@ class RoleTest {
 
     @Test
     void testCopy() {
-        int id = 42;
-        String rolename = "admin";
-        String description = "This is an administrator";
-        Role bean = Role.with().id(id).rolename(rolename).description(description).build();
-        Role copy = Role.with(bean).build();
+        var id = 42;
+        var rolename = "admin";
+        var description = "This is an administrator";
+        var bean = Role.with().id(id).rolename(rolename).description(description).build();
+        var copy = Role.with(bean).build();
         assertEquals(id, copy.getId());
         assertEquals(rolename, copy.getRolename());
         assertEquals(description, copy.getDescription());
@@ -46,8 +46,8 @@ class RoleTest {
 
     @Test
     void testNoArgsConstructor() {
-        int id = -1;
-        Role bean = Role.with().build();
+        var id = -1;
+        var bean = Role.with().build();
         assertEquals(id, bean.getId());
         assertNull(bean.getRolename());
         assertNull(bean.getDescription());

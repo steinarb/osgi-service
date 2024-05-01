@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Steinar Bang
+ * Copyright 2018-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,19 +18,16 @@ package no.priv.bang.osgiservice.database;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import java.sql.Connection;
-import javax.sql.DataSource;
-
 import org.junit.jupiter.api.Test;
 
 class DatabaseServiceTest {
 
     @Test
     void testServiceDefinition() throws Exception {
-        DatabaseService database = mock(DatabaseService.class);
-        DataSource datasource = database.getDatasource();
+        var database = mock(DatabaseService.class);
+        var datasource = database.getDatasource();
         assertNull(datasource);
-        Connection connection = database.getConnection();
+        var connection = database.getConnection();
         assertNull(connection);
     }
 

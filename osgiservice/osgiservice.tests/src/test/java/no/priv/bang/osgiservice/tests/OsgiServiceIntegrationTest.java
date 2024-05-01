@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Steinar Bang
+ * Copyright 2021-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@ import org.junit.runner.RunWith;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.junit.PaxExam;
-import org.ops4j.pax.exam.options.MavenArtifactUrlReference;
 import org.ops4j.pax.exam.spi.reactors.ExamReactorStrategy;
 import org.ops4j.pax.exam.spi.reactors.PerClass;
 
@@ -36,19 +35,19 @@ public class OsgiServiceIntegrationTest extends KarafTestSupport {
 
     @Configuration
     public Option[] config() {
-        final MavenArtifactUrlReference databaseFeatureRepo = maven()
+        final var databaseFeatureRepo = maven()
             .groupId("no.priv.bang.osgiservice")
             .artifactId("osgiservice.database")
             .version("LATEST")
             .type("xml")
             .classifier("features");
-        final MavenArtifactUrlReference usersFeatureRepo = maven()
+        final var usersFeatureRepo = maven()
             .groupId("no.priv.bang.osgiservice")
             .artifactId("osgiservice.users")
             .version("LATEST")
             .type("xml")
             .classifier("features");
-        Option[] options = new Option[] { features(databaseFeatureRepo), features(usersFeatureRepo) };
+        var options = new Option[] { features(databaseFeatureRepo), features(usersFeatureRepo) };
         return Stream.of(super.config(), options).flatMap(Stream::of).toArray(Option[]::new);
     }
 
