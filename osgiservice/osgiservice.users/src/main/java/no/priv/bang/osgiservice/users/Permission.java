@@ -19,25 +19,7 @@ package no.priv.bang.osgiservice.users;
  * Bean used represent permissions assigned to {@link Role}s in
  * {@link UserManagementService} operations.
  */
-public class Permission {
-
-    private int id;
-    private String permissionname;
-    private String description;
-
-    private Permission() {}
-
-    public int getId() {
-        return id;
-    }
-
-    public String getPermissionname() {
-        return permissionname;
-    }
-
-    public String getDescription() {
-        return description;
-    }
+public record Permission(int id, String permissionname, String description) {
 
     public static Builder with() {
         return new Builder();
@@ -59,11 +41,7 @@ public class Permission {
         private Builder() {}
 
         public Permission build() {
-            var permission = new Permission();
-            permission.id = this.id;
-            permission.permissionname = this.permissionname;
-            permission.description = this.description;
-            return permission;
+            return new Permission(this.id, this.permissionname,this.description);
         }
 
         public Builder id(int id) {

@@ -43,16 +43,16 @@ class UserRolesTest {
         var roles = Arrays.asList(role);
         var userroles = UserRoles.with().user(user).roles(roles).build();
 
-        assertEquals(user, userroles.getUser());
-        assertEquals(role, userroles.getRoles().get(0));
+        assertEquals(user, userroles.user());
+        assertEquals(role, userroles.roles().get(0));
     }
 
     @Test
     void testNoargsConstructor() {
         var userroles = UserRoles.with().build();
 
-        assertNull(userroles.getUser());
-        assertNull(userroles.getRoles());
+        assertNull(userroles.user());
+        assertNull(userroles.roles());
     }
 
 }

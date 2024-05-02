@@ -35,11 +35,11 @@ class UserTest {
             .firstname(firstname)
             .lastname(lastname)
             .build();
-        assertEquals(userid, user.getUserid());
-        assertEquals(username, user.getUsername());
-        assertEquals(email, user.getEmail());
-        assertEquals(firstname, user.getFirstname());
-        assertEquals(lastname, user.getLastname());
+        assertEquals(userid, user.userid());
+        assertEquals(username, user.username());
+        assertEquals(email, user.email());
+        assertEquals(firstname, user.firstname());
+        assertEquals(lastname, user.lastname());
     }
 
     @Test
@@ -57,21 +57,21 @@ class UserTest {
             .lastname(lastname)
             .build();
         var copy = User.with(user).build();
-        assertEquals(userid, copy.getUserid());
-        assertEquals(username, copy.getUsername());
-        assertEquals(email, copy.getEmail());
-        assertEquals(firstname, copy.getFirstname());
-        assertEquals(lastname, copy.getLastname());
+        assertEquals(userid, copy.userid());
+        assertEquals(username, copy.username());
+        assertEquals(email, copy.email());
+        assertEquals(firstname, copy.firstname());
+        assertEquals(lastname, copy.lastname());
     }
 
     @Test
     void testCreateNoargs() {
         var user = User.with().build();
-        assertEquals(-1, user.getUserid());
-        assertNull(user.getUsername());
-        assertNull(user.getEmail());
-        assertNull(user.getFirstname());
-        assertNull(user.getLastname());
+        assertEquals(-1, user.userid());
+        assertNull(user.username());
+        assertNull(user.email());
+        assertNull(user.firstname());
+        assertNull(user.lastname());
     }
 
 }

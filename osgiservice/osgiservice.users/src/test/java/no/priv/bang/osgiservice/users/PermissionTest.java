@@ -31,9 +31,9 @@ class PermissionTest {
             .permissionname(permissionname)
             .description(description)
             .build();
-        assertEquals(id, bean.getId());
-        assertEquals(permissionname, bean.getPermissionname());
-        assertEquals(description, bean.getDescription());
+        assertEquals(id, bean.id());
+        assertEquals(permissionname, bean.permissionname());
+        assertEquals(description, bean.description());
     }
 
     @Test
@@ -47,18 +47,18 @@ class PermissionTest {
             .description(description)
             .build();
         var copy = Permission.with(bean).build();
-        assertEquals(id, copy.getId());
-        assertEquals(permissionname, copy.getPermissionname());
-        assertEquals(description, copy.getDescription());
+        assertEquals(id, copy.id());
+        assertEquals(permissionname, copy.permissionname());
+        assertEquals(description, copy.description());
     }
 
     @Test
     void testNoArgsConstructor() {
         var id = -1;
         var bean = Permission.with().build();
-        assertEquals(id, bean.getId());
-        assertNull(bean.getPermissionname());
-        assertNull(bean.getDescription());
+        assertEquals(id, bean.id());
+        assertNull(bean.permissionname());
+        assertNull(bean.description());
     }
 
 }

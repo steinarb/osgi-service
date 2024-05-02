@@ -15,30 +15,10 @@
  */
 package no.priv.bang.osgiservice.users;
 
-import no.priv.bang.beans.immutable.Immutable;
-
 /**
  * Bean used represent user roles in {@link UserManagementService} operations.
  */
-public class Role extends Immutable { // NOSONAR Immutable handles added fields
-
-    private int id;
-    private String rolename;
-    private String description;
-
-    private Role() {}
-
-    public int getId() {
-        return id;
-    }
-
-    public String getRolename() {
-        return rolename;
-    }
-
-    public String getDescription() {
-        return description;
-    }
+public record Role(int id, String rolename, String description) {
 
     public static Builder with() {
         return new Builder();
@@ -60,11 +40,7 @@ public class Role extends Immutable { // NOSONAR Immutable handles added fields
         private Builder() {}
 
         public Role build() {
-            var role = new Role();
-            role.id = this.id;
-            role.rolename = this.rolename;
-            role.description = this.description;
-            return role;
+            return new Role(this.id, this.rolename, this.description);
         }
 
         public Builder id(int id) {

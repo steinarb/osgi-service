@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Steinar Bang
+ * Copyright 2019-2024 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -141,7 +141,7 @@ public interface UserManagementService {
     List<Permission> addPermission(Permission newPermission);
 
     /**
-     * Get all {@link User#getUsername()} to {@link Role} mappings in the database.
+     * Get all {@link User#username()} to {@link Role} mappings in the database.
      *
      * @return a {@link Map} from usernames to lists of roles
      */

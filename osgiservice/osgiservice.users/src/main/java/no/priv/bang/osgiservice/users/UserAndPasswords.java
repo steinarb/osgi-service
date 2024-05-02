@@ -20,30 +20,7 @@ package no.priv.bang.osgiservice.users;
  * This bean contains a {@link User} object as well as two string objects
  * holding two copies of a password.
  */
-public class UserAndPasswords {
-
-    private User user;
-    private String password1;
-    private String password2;
-    private boolean passwordsNotIdentical;
-
-    private UserAndPasswords() {}
-
-    public User getUser() {
-        return user;
-    }
-
-    public String getPassword1() {
-        return password1;
-    }
-
-    public String getPassword2() {
-        return password2;
-    }
-
-    public boolean isPasswordsNotIdentical() {
-        return passwordsNotIdentical;
-    }
+public record UserAndPasswords(User user, String password1, String password2, boolean passwordsNotIdentical) {
 
     public static Builder with() {
         return new Builder();
@@ -58,12 +35,7 @@ public class UserAndPasswords {
         private Builder() {}
 
         public UserAndPasswords build() {
-            var userAndPasswords = new UserAndPasswords();
-            userAndPasswords.user = this.user;
-            userAndPasswords.password1 = this.password1;
-            userAndPasswords.password2 = this.password2;
-            userAndPasswords.passwordsNotIdentical = this.passwordsNotIdentical;
-            return userAndPasswords;
+            return new UserAndPasswords(this.user, this.password1, this.password2, this.passwordsNotIdentical);
         }
 
         public Builder user(User user) {

@@ -15,40 +15,10 @@
  */
 package no.priv.bang.osgiservice.users;
 
-import no.priv.bang.beans.immutable.Immutable;
-
 /**
  * Bean used to in {@link UserManagementService} operations to represent a user in the database.
  */
-public class User extends Immutable { // NOSONAR Immutable handles added fields
-
-    private int userid;
-    private String username;
-    private String email;
-    private String firstname;
-    private String lastname;
-
-    private User() {}
-
-    public int getUserid() {
-        return userid;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
+public record User (int userid, String username, String email, String firstname,String lastname) {
 
     public static Builder with() {
         return new Builder();
@@ -74,13 +44,7 @@ public class User extends Immutable { // NOSONAR Immutable handles added fields
         private Builder() {}
 
         public User build() {
-            var user = new User();
-            user.userid = this.userid;
-            user.username = this.username;
-            user.email = this.email;
-            user.firstname = this.firstname;
-            user.lastname = this.lastname;
-            return user;
+            return new User(this.userid, this.username, this.email, this.firstname, this.lastname);
         }
 
         public Builder userid(int userid) {

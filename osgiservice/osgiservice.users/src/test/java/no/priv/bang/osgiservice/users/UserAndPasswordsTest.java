@@ -39,19 +39,19 @@ class UserAndPasswordsTest {
             .password2(password2)
             .passwordsNotIdentical(passwordsNotIdentical)
             .build();
-        assertEquals(user.getUserid(), userPasswords.getUser().getUserid());
-        assertEquals(password1, userPasswords.getPassword1());
-        assertEquals(password2, userPasswords.getPassword2());
-        assertEquals(passwordsNotIdentical, userPasswords.isPasswordsNotIdentical());
+        assertEquals(user.userid(), userPasswords.user().userid());
+        assertEquals(password1, userPasswords.password1());
+        assertEquals(password2, userPasswords.password2());
+        assertEquals(passwordsNotIdentical, userPasswords.passwordsNotIdentical());
     }
 
     @Test
     void testNoargsConstructor() {
         var userPasswords = UserAndPasswords.with().build();
-        assertNull(userPasswords.getUser());
-        assertNull(userPasswords.getPassword1());
-        assertNull(userPasswords.getPassword2());
-        assertFalse(userPasswords.isPasswordsNotIdentical());
+        assertNull(userPasswords.user());
+        assertNull(userPasswords.password1());
+        assertNull(userPasswords.password2());
+        assertFalse(userPasswords.passwordsNotIdentical());
     }
 
 }

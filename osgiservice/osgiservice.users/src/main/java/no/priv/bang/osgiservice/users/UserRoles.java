@@ -17,20 +17,7 @@ package no.priv.bang.osgiservice.users;
 
 import java.util.List;
 
-public class UserRoles {
-
-    private User user;
-    private List<Role> roles;
-
-    private UserRoles() {}
-
-    public User getUser() {
-        return user;
-    }
-
-    public List<Role> getRoles() {
-        return roles;
-    }
+public record UserRoles(User user, List<Role> roles) {
 
     public static Builder with() {
         return new Builder();
@@ -43,10 +30,7 @@ public class UserRoles {
         private Builder() {}
 
         public UserRoles build() {
-            var userRoles = new UserRoles();
-            userRoles.user = this.user;
-            userRoles.roles = this.roles;
-            return userRoles;
+            return new UserRoles(this.user, this.roles);
         }
 
         public Builder user(User user) {

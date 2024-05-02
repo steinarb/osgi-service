@@ -27,9 +27,9 @@ class RoleTest {
         var rolename = "admin";
         var description = "This is an administrator";
         var bean = Role.with().id(id).rolename(rolename).description(description).build();
-        assertEquals(id, bean.getId());
-        assertEquals(rolename, bean.getRolename());
-        assertEquals(description, bean.getDescription());
+        assertEquals(id, bean.id());
+        assertEquals(rolename, bean.rolename());
+        assertEquals(description, bean.description());
     }
 
     @Test
@@ -39,18 +39,18 @@ class RoleTest {
         var description = "This is an administrator";
         var bean = Role.with().id(id).rolename(rolename).description(description).build();
         var copy = Role.with(bean).build();
-        assertEquals(id, copy.getId());
-        assertEquals(rolename, copy.getRolename());
-        assertEquals(description, copy.getDescription());
+        assertEquals(id, copy.id());
+        assertEquals(rolename, copy.rolename());
+        assertEquals(description, copy.description());
     }
 
     @Test
     void testNoArgsConstructor() {
         var id = -1;
         var bean = Role.with().build();
-        assertEquals(id, bean.getId());
-        assertNull(bean.getRolename());
-        assertNull(bean.getDescription());
+        assertEquals(id, bean.id());
+        assertNull(bean.rolename());
+        assertNull(bean.description());
     }
 
 }

@@ -22,20 +22,7 @@ import java.util.List;
  * together with a list of {@link Permission} objects in
  * REST APIs.
  */
-public class RolePermissions {
-
-    private Role role;
-    private List<Permission> permissions;
-
-    private RolePermissions() {}
-
-    public Role getRole() {
-        return role;
-    }
-
-    public List<Permission> getPermissions() {
-        return permissions;
-    }
+public record RolePermissions(Role role, List<Permission> permissions) {
 
     public static Builder with() {
         return new Builder();
@@ -48,10 +35,7 @@ public class RolePermissions {
         private Builder() {}
 
         public RolePermissions build() {
-            var rolePermissions = new RolePermissions();
-            rolePermissions.role = this.role;
-            rolePermissions.permissions = this.permissions;
-            return rolePermissions;
+            return new RolePermissions(this.role,this.permissions);
         }
 
         public Builder role(Role role) {
