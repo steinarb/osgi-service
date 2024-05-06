@@ -28,7 +28,6 @@
     <name>OSGi service definitions build</name>
 
     <modules>
-        <module>osgiservice.database</module>
         <module>osgiservice.users</module>
         <module>osgiservice.tests</module>
     </modules>

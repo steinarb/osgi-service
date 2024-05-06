@@ -35,25 +35,14 @@ public class OsgiServiceIntegrationTest extends KarafTestSupport {
 
     @Configuration
     public Option[] config() {
-        final var databaseFeatureRepo = maven()
-            .groupId("no.priv.bang.osgiservice")
-            .artifactId("osgiservice.database")
-            .version("LATEST")
-            .type("xml")
-            .classifier("features");
         final var usersFeatureRepo = maven()
             .groupId("no.priv.bang.osgiservice")
             .artifactId("osgiservice.users")
             .version("LATEST")
             .type("xml")
             .classifier("features");
-        var options = new Option[] { features(databaseFeatureRepo), features(usersFeatureRepo) };
+        var options = new Option[] { features(usersFeatureRepo) };
         return Stream.of(super.config(), options).flatMap(Stream::of).toArray(Option[]::new);
-    }
-
-    @Test
-    public void testLoadDatabaseFeature() throws Exception { // NOSONAR this test has an assert, just not an assert sonar recognizes
-        installAndAssertFeature("sb-database-osgi-service");
     }
 
     @Test
