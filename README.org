@@ -37,14 +37,14 @@ To compile code using this OSGi service, add the following dependency to your ma
   <dependency>
       <groupId>no.priv.bang.osgiservice</groupId>
       <artifactId>osgiservice.users</artifactId>
-      <version>1.8.0</version>
+      <version>2.0.0</version>
       <scope>provided</scope>
   </dependency>
 #+END_SRC
 
 To get runtime access to this OSGi service in apache karaf, add the following to the karaf feature definition of the OSGi bundle(s) using the interface:
 #+BEGIN_SRC xml
-  <repository>mvn:no.priv.bang.osgiservice/osgiservice/1.8.0/xml/features</repository>
+  <repository>mvn:no.priv.bang.osgiservice/osgiservice/2.0.0/xml/features</repository>
   <feature name="myfeature">
       <feature>sb-database-osgi-service</feature>
   </feature>
@@ -55,7 +55,7 @@ Alternatively, when using the [[https://svn.apache.org/repos/asf/karaf/site/prod
   <dependency>
       <groupId>no.priv.bang.osgiservice</groupId>
       <artifactId>osgiservice.users</artifactId>
-      <version>1.8.0</version>
+      <version>2.0.0</version>
       <type>xml</type>
       <classifier>features</classifier>
   </dependency>
@@ -65,6 +65,7 @@ Alternatively, when using the [[https://svn.apache.org/repos/asf/karaf/site/prod
 
 | Version | Date         | Description                                                                                                            |
 |---------+--------------+------------------------------------------------------------------------------------------------------------------------|
+|   2.0.0 | [2024-05-26] | Replace immutable beans with records, remove the unused DatabaseService                                                |
 |   1.8.0 | [2022-05-31] | Built with karaf 4.4.0 and OSGi 8, use immutable beans 1.2.0                                                           |
 |   1.7.3 | [2021-06-10] | Stop dependencyManagemen from the parent leaking into the BoM                                                          |
 |   1.7.2 | [2021-04-18] | Add a "Bill of Materials" (BoM)                                                                                        |
