@@ -34,6 +34,7 @@ import org.ops4j.pax.exam.spi.reactors.PerClass;
 public class OsgiServiceIntegrationTest extends KarafTestSupport {
 
     @Configuration
+    @Override
     public Option[] config() {
         final var usersFeatureRepo = maven()
             .groupId("no.priv.bang.osgiservice")
