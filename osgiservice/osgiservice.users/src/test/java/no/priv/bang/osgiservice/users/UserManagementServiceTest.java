@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class UserManagementServiceTest {
 
     @Test
-    void testServiceDefinition() throws Exception {
+    void testServiceDefinition() {
         var service = mock(UserManagementService.class);
         when(service.getUsers()).thenReturn(Arrays.asList(User.with().userid(42).username("jdoe").email("jdoe42@gmail.com").firstname("John").lastname("Doe").build()));
         List<User> users = service.getUsers();
