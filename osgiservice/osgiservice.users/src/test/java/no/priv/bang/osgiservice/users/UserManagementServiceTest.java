@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2024 Steinar Bang
+ * Copyright 2019-2025 Steinar Bang
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package no.priv.bang.osgiservice.users;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -54,6 +55,17 @@ class UserManagementServiceTest {
         assertEquals(0, rolesForOtherUser.size());
         List<Permission> permissionsForOtherUser = service.getPermissionsForUser(username);
         assertEquals(0, permissionsForOtherUser.size());
+
+        var userWithIncrementedLoginFailure = service.loginFailed(username);
+        assertNull(userWithIncrementedLoginFailure);
+        var userAfterSuccessfulLogin = service.successfulLogin(username);
+        assertNull(userAfterSuccessfulLogin);
+        int excessiveFailedLoginLimit = service.setExcessiveFailedLoginLimit(3);
+        assertEquals(0, excessiveFailedLoginLimit);
+        var unlockedUserResult = service.unlockUser(username);
+        assertThat(unlockedUserResult).isEmpty();
+        boolean isLocked = service.userIsLocked(username);
+        assertFalse(isLocked);
 
         List<Role> roles = service.getRoles();
         assertEquals(0, roles.size());
