@@ -100,6 +100,11 @@ class UserManagementServiceTest {
         assertEquals(0, rolesPermissionsAfterAdd.size());
         Map<String, List<Permission>> rolesPermissionsAfterRemove = service.removeRolePermissions(rolepermissions);
         assertEquals(0, rolesPermissionsAfterRemove.size());
+
+        var config = service.getConfig();
+        assertNull(config);
+        var updatedConfig = service.modifyConfig(config);
+        assertNull(updatedConfig);
     }
 
 }

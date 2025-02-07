@@ -226,4 +226,19 @@ public interface UserManagementService {
      */
     Map<String, List<Permission>> removeRolePermissions(RolePermissions rolepermissions);
 
+    /**
+     * Get the configuration for the user management
+     *
+     * @return the current user management configuration
+     */
+    UserManagementConfig getConfig();
+
+    /**
+     * Update the user management configuration
+     *
+     * @param config the values to use in the update
+     * @return the updated configuration
+     */
+    UserManagementConfig modifyConfig(UserManagementConfig config);
+
 }
