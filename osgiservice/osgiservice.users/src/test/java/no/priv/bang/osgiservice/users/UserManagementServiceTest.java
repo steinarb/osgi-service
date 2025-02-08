@@ -56,16 +56,8 @@ class UserManagementServiceTest {
         List<Permission> permissionsForOtherUser = service.getPermissionsForUser(username);
         assertEquals(0, permissionsForOtherUser.size());
 
-        var userWithIncrementedLoginFailure = service.loginFailed(username);
-        assertNull(userWithIncrementedLoginFailure);
-        var userAfterSuccessfulLogin = service.successfulLogin(username);
-        assertNull(userAfterSuccessfulLogin);
-        int excessiveFailedLoginLimit = service.setExcessiveFailedLoginLimit(3);
-        assertEquals(0, excessiveFailedLoginLimit);
         var unlockedUserResult = service.unlockUser(username);
         assertThat(unlockedUserResult).isEmpty();
-        boolean isLocked = service.userIsLocked(username);
-        assertFalse(isLocked);
 
         List<Role> roles = service.getRoles();
         assertEquals(0, roles.size());

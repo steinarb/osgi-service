@@ -95,44 +95,12 @@ public interface UserManagementService {
     List<User> addUser(UserAndPasswords newUserWithPasswords);
 
     /**
-     * Register a failed login for a given username in the database
-     *
-     * @param username to register a failed login for
-     * @return a User object with the numberOfFailedLogins incremented by one
-     */
-    User loginFailed(String username);
-
-    /**
-     * Register a successful login for a User in the database.  The numberOfFailedLogins will be set to 0.
-     *
-     * @param username to register a successful login for
-     * @return a User object with numberOfFailedLogins set to 0
-     */
-    User successfulLogin(String username);
-
-    /**
-     * Set the number of failed logins that will lock the User's account. Default is 3.
-     *
-     * @param limit the number of failed logins that should lock the account
-     * @return the value of number of failed logins to lock the account read back from the database
-     */
-    int setExcessiveFailedLoginLimit(int limit);
-
-    /**
      * Unlock a locked account for a given username
      *
      * @param username for the account that should be unlocked
      * @return a User object with isLocked set to false and numberOfFailedAccounts set to 0
      */
     List<User> unlockUser(String username);
-
-    /**
-     * Check if user account is locked
-     *
-     * @param username for user to check
-     * @return true if user account is locked and false if user account isn't locked
-     */
-    boolean userIsLocked(String username);
 
     /**
      * Return the list of roles defined in the database.
