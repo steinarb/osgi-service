@@ -11,7 +11,7 @@ The service definitions have been deployed to maven central.
 [[https://github.com/steinarb/osgi-service/actions/workflows/osgi-service-maven-ci-build.yml][file:https://github.com/steinarb/osgi-service/actions/workflows/osgi-service-maven-ci-build.yml/badge.svg]]
 [[https://coveralls.io/github/steinarb/osgi-service][file:https://coveralls.io/repos/github/steinarb/osgi-service/badge.svg]]
 [[https://sonarcloud.io/summary/new_code?id=steinarb_osgi-service][file:https://sonarcloud.io/api/project_badges/measure?project=steinarb_osgi-service&metric=alert_status#.svg]]
-[[https://maven-badges.herokuapp.com/maven-central/no.priv.bang.osgiservice/osgiservice][file:https://maven-badges.herokuapp.com/maven-central/no.priv.bang.osgiservice/osgiservice/badge.svg]]
+[[https://maven-badges.sml.io/sonatype-central/no.priv.bang.osgiservice/osgiservice][file:https://maven-badges.sml.io/sonatype-central/no.priv.bang.osgiservice/osgiservice/badge.svg]]
 [[https://www.javadoc.io/doc/no.priv.bang.osgiservice/osgiservice][file:https://www.javadoc.io/badge/no.priv.bang.osgiservice/osgiservice.svg]]
 
 [[https://sonarcloud.io/summary/new_code?id=steinarb_osgi-service][file:https://sonarcloud.io/images/project_badges/sonarcloud-white.svg]]
